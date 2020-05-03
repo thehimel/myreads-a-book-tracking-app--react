@@ -45,23 +45,10 @@ class App extends Component {
             books
         }));
 
-        //BooksAPI.update(book, shelf);
-    };
-
-    updateShelfWithID = (bookID) => {
-        const booksCopy = JSON.parse(JSON.stringify(this.state.books));
-
-        for(var i = 0; i < booksCopy.length; i++) {
-            if(booksCopy[i].id === bookID) {
-                booksCopy[i].shelf = "Test Shelf";
-                break;
-            }
-        }
+        BooksAPI.update(book, shelf);
     };
 
     render() {
-        this.updateShelfWithID("74XNzF_al3MC");
-
         return (
             <div className="app">
                 <Route exact path='/' render={() => (
@@ -73,6 +60,8 @@ class App extends Component {
 
                 <Route path='/search' render={() => (
                     <SearchBooks
+                        books={this.state.books}
+                        onUpdateShelf={this.updateShelf}
                     />
                 )} />
             </div>
