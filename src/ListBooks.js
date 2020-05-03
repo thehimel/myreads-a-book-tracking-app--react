@@ -30,9 +30,9 @@ class ListBooks extends Component {
                 </div>
                 <div className="list-books-content">
                 <div>
-                    <Books books={currentlyReadingBooks} bookshelfTitle="Currently Reading" />
-                    <Books books={wantToReadBooks} bookshelfTitle="Want to Read" />
-                    <Books books={readBooks} bookshelfTitle="Read" />
+                    <Books books={currentlyReadingBooks} bookshelfTitle="Currently Reading" onUpdateShelf={this.props.onUpdateShelf} />
+                    <Books books={wantToReadBooks} bookshelfTitle="Want to Read" onUpdateShelf={this.props.onUpdateShelf} />
+                    <Books books={readBooks} bookshelfTitle="Read" onUpdateShelf={this.props.onUpdateShelf} />
                 </div>
                 </div>
                 <Link to='/search' className="open-search">

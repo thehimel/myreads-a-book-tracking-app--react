@@ -67,6 +67,7 @@ class App extends Component {
                 <Route exact path='/' render={() => (
                     <ListBooks
                         books={this.state.books}
+                        onUpdateShelf={this.updateShelf}
                     />
                 )} />
 
