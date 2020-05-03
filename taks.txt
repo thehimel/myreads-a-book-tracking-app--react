@@ -1,3 +1,7 @@
+Data Flow: App.js -> ListBooks.js -> Books.js -> Book.js
+
+Data Flow: App.js -> SearchBooks.js -> Books.js -> Book.js
+-----------------------------------------------------------
 
 Create ListBooks.js with static code
 
@@ -12,5 +16,11 @@ Edit open-search in App.css by removing the button
 Implement Link in the close-search of SearchBooks.js
 
 Define books in the state of App.js
+
+Create ListBooks.js, Books.js, Book.js and show data accordingly.
+
+Create updateShelf(book, shelf) in app.js
+
+Implement SearchBooks.js
 
 

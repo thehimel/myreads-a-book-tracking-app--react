@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Book from './Book'
 
 const Books = props => {
+
     const {books, bookshelfTitle} = props;
     return (
         <div className="bookshelf">
@@ -18,6 +19,11 @@ const Books = props => {
             </div>
         </div>
     );
+};
+
+Books.propTypes = {
+    books: PropTypes.array.isRequired,
+    onUpdateShelf: PropTypes.func.isRequired,
 };
 
 export default Books;

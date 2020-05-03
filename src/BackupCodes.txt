@@ -1,3 +1,5 @@
+
+// App.js
 updateShelf = (book, shelf) => {
     const books = this.state.books;
 
@@ -26,3 +28,19 @@ updateShelf = (book, shelf) => {
 
     BooksAPI.update(book, shelf);
 };
+
+
+// ListBooks.js
+const { books } = this.props;
+
+const currentlyReadingBooks = books.filter(book => (
+    book.shelf === "currentlyReading"
+));
+
+const wantToReadBooks = books.filter(book => (
+    book.shelf === "wantToRead"
+));
+
+const readBooks = books.filter(book => (
+    book.shelf === "read"
+));

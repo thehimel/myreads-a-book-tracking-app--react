@@ -10,14 +10,14 @@ class App extends Component {
         books: []
     }
 
-    getBooks = () => (
+    getBooks = () => {
         BooksAPI.getAll()
         .then((books) => {
             this.setState(() => ({
                 books
-            }))
-        })
-    );
+            }));
+        });
+    };
 
     componentDidMount() {
         // After the component is loaded, fetch the data.
@@ -25,9 +25,14 @@ class App extends Component {
     }
 
     updateShelf = (book, shelf) => {
-        // First update in the remote server
-        // Then fetch it
-        BooksAPI.update(book, shelf).then(this.getBooks());
+        /*
+        First update in the remote server, Then fetch it
+        Alwasy use then in this format. If you use function.then(function), it won't work properly.
+        */
+        BooksAPI.update(book, shelf)
+        .then(() => {
+            this.getBooks();
+        });
     };
 
     render() {

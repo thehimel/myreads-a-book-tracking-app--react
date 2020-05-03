@@ -5,6 +5,10 @@ import * as BooksAPI from './BooksAPI'
 import Books from './Books'
 
 class SearchBooks extends Component {
+    static propTypes = {
+        onUpdateShelf: PropTypes.func.isRequired,
+    };
+
     state = {
         query: '',
         showingBooks: []

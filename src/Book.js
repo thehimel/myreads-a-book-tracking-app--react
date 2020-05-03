@@ -30,4 +30,9 @@ const Book = props => {
     );
 };
 
+Book.propTypes = {
+    book: PropTypes.object.isRequired,
+    onUpdateShelf: PropTypes.func.isRequired,
+};
+
 export default Book;
