@@ -6,6 +6,7 @@ import Books from './Books'
 
 class SearchBooks extends Component {
     static propTypes = {
+        books: PropTypes.array.isRequired,
         onUpdateShelf: PropTypes.func.isRequired,
     };
 
@@ -15,6 +16,8 @@ class SearchBooks extends Component {
     };
 
     updateQuery = (query) => {
+        const booksInCollection = this.props.books;
+
         this.setState((currState) => ({
             ...currState,
             query
@@ -30,11 +33,25 @@ class SearchBooks extends Component {
             // When is not empty, fetch search result
             BooksAPI.search(query)
             .then((books) => {
+                // If nothing is found the API will return an object with error property.
+                // So, if books.error exists, return.
+                if (books.error) {
+                    return;
+                }
+
+                // For every book from search result, if it exists in the collection,
+                // Replace it with the book from shelf to show the book.shelf
+                for (var i=0; i<books.length; i++) {
+                    for(var j=0; j<booksInCollection.length; j++) {
+                        if (booksInCollection[j].id === books[i].id) {
+                            books[i] = booksInCollection[j];
+                        }
+                    }
+                }
+
                 this.setState((currState) => ({
                     ...currState,
-                    // If nothing is found the API will return an object with error property.
-                    // So, if books.error exists, return empty list. Else, return the result.
-                    showingBooks: books.error ? [] : books
+                    showingBooks: books
                 }))
             })
         }

@@ -44,3 +44,12 @@ const wantToReadBooks = books.filter(book => (
 const readBooks = books.filter(book => (
     book.shelf === "read"
 ));
+
+
+// SearchBooks.js
+this.setState((currState) => ({
+    ...currState,
+    // If nothing is found the API will return an object with error property.
+    // So, if books.error exists, return empty list. Else, return the result.
+    showingBooks: books.error ? [] : books
+}))
