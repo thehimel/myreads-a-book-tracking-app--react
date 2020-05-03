@@ -12,9 +12,7 @@ class ListBooks extends Component {
     render() {
         const { books } = this.props;
 
-        const filterBooksByShelf = (shelf) => books.filter (book => (
-            book.shelf === shelf
-        ));
+        const filterBooksByShelf = (shelf) => books.filter (book => book.shelf === shelf);
 
         const currentlyReadingBooks = filterBooksByShelf("currentlyReading");
         const wantToReadBooks = filterBooksByShelf("wantToRead");
