@@ -26,7 +26,7 @@ class SearchBooks extends Component {
         if (query === '') {
             this.setState((currState) => ({
                 ...currState,
-                // If query is cleared, no search result is shown
+                // If query is cleared, set searched books array back to blank
                 showingBooks: []
             }))
         } else {
@@ -34,7 +34,7 @@ class SearchBooks extends Component {
             BooksAPI.search(query)
             .then((books) => {
                 // If nothing is found the API will return an object with error property.
-                // So, if books.error exists, return.
+                // So, if books.error exists, return. The searched books array will remain as it is.
                 if (books.error) {
                     return;
                 }
