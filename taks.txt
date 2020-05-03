@@ -23,4 +23,6 @@ Create updateShelf(book, shelf) in app.js
 
 Implement SearchBooks.js
 
+Handle the search to work correctly when a book does not have a thumbnail with try and catch in Book.js
+
 
