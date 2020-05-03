@@ -8,7 +8,6 @@ Implement Route from react-router-dom in app.js
 
 Implement Link in the the search element of ListBooks.js
 Edit open-search in App.css by removing the button
-Change the search icon in App.css
 
 Implement Link in the close-search of SearchBooks.js
 

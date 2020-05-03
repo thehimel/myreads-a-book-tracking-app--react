@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const Book = props => {
@@ -8,6 +8,8 @@ const Book = props => {
         props.onUpdateShelf(book, event.target.value);
     };
 
+    // console.log(book);
+
     return (
         <div className="book">
             <div className="book-top">
@@ -15,10 +17,10 @@ const Book = props => {
                 <div className="book-shelf-changer">
                     <select onChange={handleOnUpdateShelf} defaultValue={book.shelf}>
                         <option value="move" disabled>Move to...</option>
+                        <option value="none">None</option>
                         <option value="currentlyReading">Currently Reading</option>
                         <option value="wantToRead">Want to Read</option>
                         <option value="read">Read</option>
-                        <option value="none">None</option>
                     </select>
                 </div>
             </div>

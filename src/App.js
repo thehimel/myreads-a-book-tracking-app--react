@@ -10,42 +10,24 @@ class App extends Component {
         books: []
     }
 
-    componentDidMount() {
+    getBooks = () => (
         BooksAPI.getAll()
         .then((books) => {
             this.setState(() => ({
                 books
             }))
         })
+    );
+
+    componentDidMount() {
+        // After the component is loaded, fetch the data.
+        this.getBooks();
     }
 
-    /*
-    removeContact = (contact) => {
-        this.setState((currentState) => ({
-            contacts: currentState.contacts.filter((c) => {
-            return c.id !== contact.id
-            })
-        }))
-
-        ContactsAPI.remove(contact)
-    };
-    */
-
     updateShelf = (book, shelf) => {
-        const books = JSON.parse(JSON.stringify(this.state.books));
-
-        for(var i = 0; i < books.length; i++) {
-            if(books[i].id === book.id) {
-                books[i].shelf = shelf;
-                break;
-            }
-        }
-
-        this.setState((currentState) => ({
-            books
-        }));
-
-        BooksAPI.update(book, shelf);
+        // First update in the remote server
+        // Then fetch it
+        BooksAPI.update(book, shelf).then(this.getBooks());
     };
 
     render() {
@@ -60,7 +42,6 @@ class App extends Component {
 
                 <Route path='/search' render={() => (
                     <SearchBooks
-                        books={this.state.books}
                         onUpdateShelf={this.updateShelf}
                     />
                 )} />

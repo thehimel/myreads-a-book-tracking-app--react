@@ -19,6 +19,10 @@ class ListBooks extends Component {
             book.shelf === "read"
         ));
 
+        const noneBooks = books.filter(book => (
+            book.shelf === "none"
+        ));
+
         return (
             <div className="list-books">
                 <div className="list-books-title">
@@ -29,10 +33,11 @@ class ListBooks extends Component {
                     <Books books={currentlyReadingBooks} bookshelfTitle="Currently Reading" onUpdateShelf={this.props.onUpdateShelf} />
                     <Books books={wantToReadBooks} bookshelfTitle="Want to Read" onUpdateShelf={this.props.onUpdateShelf} />
                     <Books books={readBooks} bookshelfTitle="Read" onUpdateShelf={this.props.onUpdateShelf} />
+                    <Books books={noneBooks} bookshelfTitle="None" onUpdateShelf={this.props.onUpdateShelf} />
                 </div>
                 </div>
                 <Link to='/search' className="open-search">
-                    Search books
+                    Add a book
                 </Link>
           </div>
         );
