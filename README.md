@@ -2,6 +2,12 @@
 
 The project is developed for the final assessment project for Udacity's React Fundamentals course. I found it very interesting while developing the project.
 
+## Features
+- Allows the user to select and categorize books that the user has read, is currently reading, or want to read.
+- By clicking on the add button, the user can search the desired books and add to the respective shelf.
+- The app updates all the changes automatically by synchronizing with the backend server.
+- The defined category is also reflected in the search result if the book in the search result exists in the shelf.
+
 ## Getting Started
 
 * install all project dependencies with `npm install`
@@ -9,7 +15,7 @@ The project is developed for the final assessment project for Udacity's React Fu
 
 ## Backend Server
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
+To simplify your development process, Udacity have provided a backend server to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods needed to perform necessary operations on the backend:
 
 * [`getAll`](#getall)
 * [`update`](#update)
