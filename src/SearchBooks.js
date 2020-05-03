@@ -20,7 +20,14 @@ class SearchBooks extends Component {
             query
         }));
 
-        if (query !== '') {
+        if (query === '') {
+            this.setState((currState) => ({
+                ...currState,
+                // If query is cleared, no search result is shown
+                showingBooks: []
+            }))
+        } else {
+            // When is not empty, fetch search result
             BooksAPI.search(query)
             .then((books) => {
                 this.setState((currState) => ({

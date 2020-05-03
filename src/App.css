@@ -108,6 +108,7 @@ body, .app {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 28px;
+  background-color: #eee;
   font-size: 0;
   border: none;
   outline: none;
