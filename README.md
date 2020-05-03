@@ -1,6 +1,6 @@
 # MyReads Project
 
-The project is developed for the final assessment project for Udacity's React Fundamentals course.
+The project is developed for the final assessment project for Udacity's React Fundamentals course. I found it very interesting while developing the project.
 
 ## Getting Started
 
@@ -56,3 +56,9 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+## Author
+- Himel Das
+
+## Acknowledgements
+- The incredible team at Udacity
