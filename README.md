@@ -12,7 +12,7 @@ The project is developed for the final assessment project for Udacity's React Fu
 - The app updates all the changes automatically by synchronizing with the backend server.
 - The defined category is also reflected in the search result if the book exists on the shelf.
 
-## Video
+## MyReads on YouTube
 [![MyReads on YouTube](https://img.youtube.com/vi/QFORnFNg1IM/0.jpg)](https://www.youtube.com/watch?v=QFORnFNg1IM)
 
 ## Getting Started
