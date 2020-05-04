@@ -73,5 +73,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Author
 - Himel Das
 
+## License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
+
 ## Acknowledgements
 - The incredible team at Udacity
