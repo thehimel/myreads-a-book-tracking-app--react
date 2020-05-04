@@ -20,19 +20,26 @@ const Book = props => {
         }
     };
 
-    // console.log(book);
+    // If the shelf is undefined return none else return the shelf
+    const getDefaultShelfValue = (book) => {
+        if (book.shelf === undefined) {
+            return 'none';
+        }
+
+        return book.shelf;
+    };
 
     return (
         <div className="book">
             <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${getThumbnail(book)})` }}></div>
                 <div className="book-shelf-changer">
-                    <select onChange={handleOnUpdateShelf} defaultValue={book.shelf}>
+                    <select onChange={handleOnUpdateShelf} defaultValue={getDefaultShelfValue(book)}>
                         <option value="move" disabled>Move to...</option>
-                        <option value="none">None</option>
                         <option value="currentlyReading">Currently Reading</option>
                         <option value="wantToRead">Want to Read</option>
                         <option value="read">Read</option>
+                        <option value="none">None</option>
                     </select>
                 </div>
             </div>

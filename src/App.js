@@ -10,14 +10,11 @@ class App extends Component {
         books: []
     }
 
-    getBooks = () => {
-        BooksAPI.getAll()
-        .then((books) => {
-            this.setState(() => ({
-                books
-            }));
-        });
-    };
+    // Use async + await - a special syntax to work with promises in a more concise fashion - Udacity
+    async getBooks () {
+        const books = await BooksAPI.getAll();
+        this.setState({ books });
+    }
 
     componentDidMount() {
         // After the component is loaded, fetch the data.
