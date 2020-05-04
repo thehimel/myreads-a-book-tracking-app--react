@@ -10,7 +10,7 @@ The project is developed for the final assessment project for Udacity's React Fu
 - Allows the user to select and categorize books that the user has read, is currently reading, or want to read.
 - By clicking on the add button, the user can search the desired books and add to the respective shelf.
 - The app updates all the changes automatically by synchronizing with the backend server.
-- The defined category is also reflected in the search result if the book exists in the shelf.
+- The defined category is also reflected in the search result if the book exists on the shelf.
 
 ## Getting Started
 
