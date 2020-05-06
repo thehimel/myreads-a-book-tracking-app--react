@@ -1,4 +1,4 @@
-# MyReads Project
+# MyReads - ABook Tracking App with React
 
 The project is developed for the final assessment project for Udacity's React Fundamentals course. I found it very interesting while developing the project. The project covers the following aspects of React:
 - Rendering UI with React
