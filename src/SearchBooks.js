@@ -15,20 +15,30 @@ class SearchBooks extends Component {
         showingBooks: []
     };
 
-    updateQuery = (query) => {
-        const booksInCollection = this.props.books;
+    setBooks = (books=[]) => {
+        this.setState((currState) => ({
+            ...currState,
+            showingBooks: books
+        }))
+        // console.log('books', books)
+    }
 
+    setQuery = (query='') => {
         this.setState((currState) => ({
             ...currState,
             query
         }));
+        // console.log('query', query)
+    }
+
+    updateQuery = (query) => {
+        const booksInCollection = this.props.books;
+
+        this.setQuery(query)
 
         if (query === '') {
-            this.setState((currState) => ({
-                ...currState,
-                // If query is cleared, set searched books array back to blank
-                showingBooks: []
-            }))
+            // If query is cleared, set searched books array back to blank
+            this.setBooks();
         } else {
             // When is not empty, fetch search result
             BooksAPI.search(query)
@@ -36,6 +46,8 @@ class SearchBooks extends Component {
                 // If nothing is found the API will return an object with error property.
                 // So, if books.error exists, return. The searched books array will remain as it is.
                 if (books.error) {
+                    // If nothing is found, set searched books array back to blank
+                    this.setBooks();
                     return;
                 }
 
@@ -49,10 +61,7 @@ class SearchBooks extends Component {
                     }
                 }
 
-                this.setState((currState) => ({
-                    ...currState,
-                    showingBooks: books
-                }))
+                this.setBooks(books)
             })
         }
     };

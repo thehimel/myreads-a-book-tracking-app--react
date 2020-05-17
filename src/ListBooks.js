@@ -14,9 +14,11 @@ class ListBooks extends Component {
 
         const filterBooksByShelf = (shelf) => books.filter (book => book.shelf === shelf);
 
-        const currentlyReadingBooks = filterBooksByShelf("currentlyReading");
-        const wantToReadBooks = filterBooksByShelf("wantToRead");
-        const readBooks = filterBooksByShelf("read");
+        const shelves = [
+            ['Currently Reading', 'currentlyReading'],
+            ['Want to Read', 'wantToRead'],
+            ['Read', 'read']
+        ]
 
         return (
             <div className="list-books">
@@ -25,9 +27,14 @@ class ListBooks extends Component {
                 </div>
                 <div className="list-books-content">
                 <div>
-                    <Books books={currentlyReadingBooks} bookshelfTitle="Currently Reading" onUpdateShelf={this.props.onUpdateShelf} />
-                    <Books books={wantToReadBooks} bookshelfTitle="Want to Read" onUpdateShelf={this.props.onUpdateShelf} />
-                    <Books books={readBooks} bookshelfTitle="Read" onUpdateShelf={this.props.onUpdateShelf} />
+                    {shelves.map((shelf) => (
+                        <Books
+                            bookshelfTitle={shelf[0]}
+                            books={filterBooksByShelf(shelf[1])}
+                            key={shelf[1]}
+                            onUpdateShelf={this.props.onUpdateShelf}
+                        />
+                    ))}
                 </div>
                 </div>
                 <Link to='/search' className="open-search">
